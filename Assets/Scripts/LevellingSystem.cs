@@ -1,18 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class LevellingSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //May need to make these arrays in order to work with the other scripts
+    public float _currentExperience;
+    public float _maxExperience;
+    public float _currentLevel;
+    public float _maxLevel;
 
-    // Update is called once per frame
-    void Update()
+    public void Awake()
     {
-        
+    }
+    //temp button pressing to test leveling up
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            _currentExperience += 27;
+            Debug.Log("EXP: " + _currentExperience + "/" + _maxExperience);
+        }
+        LevelUp();
+    }
+    public void LevelUp()
+    {
+        if(_currentExperience > _maxExperience)
+        {
+            if(_currentLevel < _maxLevel)
+            {
+                _currentLevel += 1;
+                Debug.Log("Character has leveled up. EXP: " + _currentExperience + "/" + _maxExperience);
+                _currentExperience = _currentExperience - _maxExperience;
+            }
+        }
+        else if( _currentLevel == _maxLevel) {
+            Debug.Log("Character is max level");
+        }
     }
 }
