@@ -5,19 +5,16 @@ using UnityEngine;
 
 public class Jobs : MonoBehaviour
 {
-    public string[] _jobs;
-    public float[] _stats;
-    public string[] _statnames;
-    [SerializeField] public int _statlength;
-    [SerializeField] public int _jobAmt;
+    [Header("Jobs")]
+    //place any jobs here; String first, then int array second vvv
+    public string Fighter;
+    public int[] FighterStats;
 
-    
+    //place any jobs here ^^^
     public void Awake() { 
-        _jobs = new string[_jobAmt];
-        _stats = new float[_statlength];
-        _statnames = new string[_statlength];
       
-        JobListings();
+      
+     //   JobListings();
     }
     public void JobListings()
     {
