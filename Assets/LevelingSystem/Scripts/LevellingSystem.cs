@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LevellingSystem : MonoBehaviour
 {
-    //May need to make these arrays in order to work with the other scripts
+   
     [SerializeField] public float _currentExperience = 0;
     [SerializeField] public float _maxExperience = 100;
     [SerializeField] public float _currentLevel = 1;
@@ -14,15 +14,9 @@ public class LevellingSystem : MonoBehaviour
     public void Awake()
     {
     }
-    //temp button pressing to test leveling up
+
     public void Update()
     {
-        
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            _currentExperience += 27;
-            Debug.Log("Level: " + _currentLevel +" / EXP: " + _currentExperience + "/" + _maxExperience);
-        }
         LevelUp();
     }
     public void LevelUp()
@@ -35,6 +29,7 @@ public class LevellingSystem : MonoBehaviour
                 _currentLevel += 1;
                 Debug.Log("Character has leveled up. EXP: " + _currentExperience + "/" + _maxExperience);
                 _currentExperience = _currentExperience - _maxExperience;
+                //Add if statements here for increasing stats vvv
                 if (_class == Jobs.Warrior)
                 {
                     _stats.HP += 2;
@@ -61,6 +56,7 @@ public class LevellingSystem : MonoBehaviour
                     _stats.DEF += 1;
                     _stats.RES += 1;
                 }
+                //Add if statements here for increasing stats ^^^
             }
         }
         else if( _currentLevel == _maxLevel) {

@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Stats : MonoBehaviour
 {
+    //Note: stats need to be public in order to be editted by level ups
     //place any stats here vvv
     public int HP;
     public int STR;
@@ -18,17 +19,11 @@ public class Stats : MonoBehaviour
         
         StartStats();
     }
-    public void Update()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Debug.Log("Stats; HP: " + HP + " STR: " + STR + " MAG: " + MAG + " AGI: " + AGI + " DEF: " + DEF + " RES: " + RES);
-        }
-     }
+
     public void StartStats()
     {
         _classPick = GetComponent<LevellingSystem>();
+        //Add if statments here with each stat to set starting stats for each class vvv
         if (_classPick._class == Jobs.Warrior)
         {
             HP = 10;
@@ -69,6 +64,7 @@ public class Stats : MonoBehaviour
             RES = 3;
             Debug.Log("Stats; HP: " + HP + " STR: " + STR + " MAG: " + MAG + " AGI: " + AGI + " DEF: " + DEF + " RES: " + RES);
         }
+        //Add if statments here with each stat to set starting stats for each class ^^^
     }
 
 }
