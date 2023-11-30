@@ -393,7 +393,7 @@ MonoBehaviour:
   _maxExperience: 100
   _currentLevel: 1
   _maxLevel: 10
-  _class: 0
+  _class: 1
 --- !u!65 &507456790
 BoxCollider:
   m_ObjectHideFlags: 0
